@@ -1,75 +1,110 @@
 /* Add some basic styles to the form */
 /* Styles for the form */
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-  }
-  
-  label {
-    font-weight: bold;
-    margin-top: 20px;
-  }
-  
-  input[type="text"] {
-    width: 300px;
-    height: 40px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-    padding: 5px;
-    margin-top: 10px;
-  }
-  
-  button[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    padding: 10px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #3e8e41;
-  }
-  
-  /* Styles for the shipping label */
-  .label {
-    border: 1px solid #ccc;
-    padding: 20px;
-    width: 500px;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 50px auto;
-  }
-  
-  .label h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .label p {
-    font-size: 16px;
-    margin-top: 10px;
-  }
-  
-  .qr-code {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .qr-code img {
-    width: 150px;
-    height: 150px;
-    margin: 10px;
-    border: 1px solid #ccc;
-    padding: 10px;
-  }
-  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 50px;
+}
+
+label {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+input[type="text"] {
+  width: 300px;
+  height: 40px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+/* Styles for the shipping label */
+.label-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-right: 400px;
+}
+
+.label {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.label h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.label p {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.qr-code {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.qr-code img {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+#send {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 20px;
+}
+
+#rec {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+button[type="submit"] {
+  align-self: center;
+  margin-top: 425px;
+  margin-left: -625px;
+}
+

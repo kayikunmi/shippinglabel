@@ -8,13 +8,31 @@
     <h1>Shipping Label Generator</h1>
 
     <form>
-      <label for="from">From:</label>
-      <input type="text" id="from" name="from" required />
+      <div id="send">
+        <label for="from">Sender Name:</label>
+        <input type="text" id="fromname" name="fromname" required />
+        <label for="from">Sender Number:</label>
+        <input type="text" id="fromnumber" name="fromnumber" required />
+        <label for="from">Sender Address:</label>
+        <input type="text" id="fromaddress" name="fromaddress" required />
+        <label for="del">Delivery Items:</label>
+        <input type="text" id="items" name="items" required />
+      </div>
 
-      <label for="to">To:</label>
-      <input type="text" id="to" name="to" required />
+      <div id="rec">
+        <label for="to">Receiver Name:</label>
+        <input type="text" id="toname" name="toname" required />
+        <label for="to">Receiver Number:</label>
+        <input type="text" id="tonumber" name="tonumber" required />
+        <label for="to">Receiver Address:</label>
+        <input type="text" id="toaddress" name="toaddress" required />
+        <label for="del">Delivery Note:</label>
+        <input type="text" id="note" name="note" required />
+      </div>
 
-      <button type="submit">Generate Label</button>
+      <div class="button-container">
+        <button type="submit">Generate Label</button>
+      </div>
     </form>
 
     <div id="label-container"></div>
