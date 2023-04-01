@@ -21,6 +21,7 @@ form.addEventListener('submit', (event) => {
       <p>From: ${from}</p>
       <p>To: ${to}</p>
       <div id="qr-code"></div>
+      <img id="qr-code-img">
     </div>
   `;
 
@@ -35,10 +36,14 @@ form.addEventListener('submit', (event) => {
     size: 200
   });
 
+  // Set the QR code image source
+  const qrCodeImg = document.querySelector('#qr-code-img');
+  qrCodeImg.src = qrCode.toDataURL();
+
   // Convert the label container to a PDF and download it
   const pdf = new jsPDF();
   pdf.fromHTML(labelContainer, 15, 15, {}, () => {
-    pdf.addImage(qrCode.toDataURL(), 'JPEG', 15, 75, 180, 180);
+    pdf.addImage(qrCode.toDataURL(), 'JPEG', 15, 75, 180, 100);
     pdf.save('shipping-label.pdf');
   });
 });
