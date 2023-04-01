@@ -20,30 +20,25 @@ form.addEventListener('submit', (event) => {
       <h2>Shipping Label</h2>
       <p>From: ${from}</p>
       <p>To: ${to}</p>
-      <div class="qr-code"></div>
+      <div id="qr-code"></div>
     </div>
   `;
 
   // Add the label template to the label container
   labelContainer.innerHTML = labelTemplate;
 
-  // Generate the QR
-  // Get the QR code container element
-  const qrCodeContainer = document.querySelector('.qr-code');
-
   // Generate the QR code
-  const qrCode = new QRCode(qrCodeContainer, {
-    text: `${from}, ${to}`,
-    width: 200,
-    height: 200,
+  const qrCodeContainer = document.querySelector('#qr-code');
+  const qrCode = new QRious({
+    element: qrCodeContainer,
+    value: `${from}, ${to}`,
+    size: 200
   });
 
-  // Convert the label template to a PDF
+  // Convert the label container to a PDF and download it
   const pdf = new jsPDF();
-  pdf.html(labelContainer, {
-    callback: () => {
-      // Save the PDF file
-      pdf.save('shipping-label.pdf');
-    },
+  pdf.fromHTML(labelContainer, 15, 15, {}, () => {
+    pdf.addImage(qrCode.toDataURL(), 'JPEG', 15, 75, 180, 180);
+    pdf.save('shipping-label.pdf');
   });
 });
